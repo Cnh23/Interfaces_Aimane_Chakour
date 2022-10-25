@@ -15,8 +15,12 @@ public class Main extends Application {
 		try {
 			// Carga el diseño del archivo FXML en la variable rootLayout
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(Main.class.getResource("Inicio.fxml"));
+			loader.setLocation(Main.class.getResource("FormularioPrincipal.fxml"));
 			rootLayout = (BorderPane) loader.load();
+			
+			// Pasamos al controlador de menú el objeto con el BorderPane principal
+			MenuController menuController = loader.getController();
+			menuController.setRootLayout(rootLayout);
 			
 			// Mostramos la escena del BorderPane de la variable rootLayot
 			Scene scene = new Scene(rootLayout);
