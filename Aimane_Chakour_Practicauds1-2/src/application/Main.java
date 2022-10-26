@@ -15,10 +15,10 @@ public class Main extends Application {
 		try {
 			// Carga el diseño del archivo FXML en la variable rootLayout
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(Main.class.getResource("FormularioPrincipal.fxml"));
+			loader.setLocation(Main.class.getResource("/Inicio/Inicio.fxml"));
 			rootLayout = (BorderPane) loader.load();
 			
-			// Pasamos al controlador de menú el objeto con el BorderPane principal
+			// Pasamos al controlador de menu el objeto con el BorderPane principal
 			MenuController menuController = loader.getController();
 			menuController.setRootLayout(rootLayout);
 			

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="Formulario.FormController">
+      <GridPane layoutX="104.0" prefHeight="365.0" prefWidth="496.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="104.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Nombre y apellidos" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="130.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="Dubai Regular" size="14.0" />
+               </font>
+            </Label>
+            <Label text="Correo electrónico" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets left="130.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="Dubai Regular" size="14.0" />
+               </font>
+            </Label>
+            <Label text="Fecha de nacimiento" GridPane.rowIndex="5">
+               <font>
+                  <Font name="Dubai Regular" size="14.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="130.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Teléfono" GridPane.rowIndex="8">
+               <font>
+                  <Font name="Dubai Regular" size="14.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="130.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Dirección" GridPane.rowIndex="7">
+               <font>
+                  <Font name="Dubai Regular" size="14.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="130.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Código postal" GridPane.rowIndex="6">
+               <font>
+                  <Font name="Dubai Regular" size="14.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="130.0" />
+               </GridPane.margin>
+            </Label>
+            <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets right="80.0" />
+               </GridPane.margin>
+            </DatePicker>
+            <TextField promptText="Escribir..." GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets right="80.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField promptText="Ejemplo@ejemplo.ejm" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets right="80.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField promptText="Ej: 28000" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <GridPane.margin>
+                  <Insets right="80.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField promptText="Calle, vía... Número, escalera, piso" GridPane.columnIndex="1" GridPane.rowIndex="7">
+               <GridPane.margin>
+                  <Insets right="80.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField promptText="Tlf..." GridPane.columnIndex="1" GridPane.rowIndex="8">
+               <GridPane.margin>
+                  <Insets right="80.0" />
+               </GridPane.margin>
+            </TextField>
+            <RadioButton mnemonicParsing="false" text="Acepto los términos y condiciones" GridPane.columnIndex="1" GridPane.rowIndex="9">
+               <GridPane.margin>
+                  <Insets right="80.0" />
+               </GridPane.margin>
+            </RadioButton>
+         <Label text="Tipo de cobertura" GridPane.rowIndex="2">
+            <font>
+               <Font name="Dubai Regular" size="14.0" />
+            </font>
+            <GridPane.margin>
+               <Insets left="130.0" />
+            </GridPane.margin>
+         </Label>
+         <Label text="Tipo de póliza">
+            <font>
+               <Font name="Dubai Regular" size="14.0" />
+            </font>
+            <GridPane.margin>
+               <Insets left="130.0" />
+            </GridPane.margin>
+         </Label>
+         <Label text="Pagos de la prima" GridPane.rowIndex="1">
+            <font>
+               <Font name="Dubai Regular" size="14.0" />
+            </font>
+            <GridPane.margin>
+               <Insets left="130.0" />
+            </GridPane.margin>
+         </Label>
+         <ChoiceBox fx:id="Poliza" prefWidth="150.0" GridPane.columnIndex="1" />
+         <ChoiceBox fx:id="Prima" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         <ChoiceBox fx:id="Cobertura" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+      <AnchorPane style="-fx-background-color: #008B8B;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Button mnemonicParsing="false" text="Enviar" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+            <Button mnemonicParsing="false" text="Regresar" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" />
+         </children>
+      </AnchorPane>
+      <Pane prefHeight="365.0" prefWidth="104.0" style="-fx-background-color: #008B8B;" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Text layoutX="-104.0" layoutY="191.0" rotate="-90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FORMULARIO">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+</AnchorPane>

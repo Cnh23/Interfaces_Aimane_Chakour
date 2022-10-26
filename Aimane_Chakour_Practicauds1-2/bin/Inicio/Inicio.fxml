@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MenuController">
+   <top>
+      <VBox alignment="TOP_CENTER" style="-fx-background-color: #008B8B;" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#abrirFormulario" text="Formulario" />
+                        <MenuItem mnemonicParsing="false" onAction="#abrirInicio" text="Inicio" />
+                        <MenuItem mnemonicParsing="false" onAction="#abrirDatos" text="Datos" />
+                        <MenuItem mnemonicParsing="false" text="Final" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ASEGURADORA PÍO BAROJA">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ACTIVIDAD REALIZADA POR AIMANE CHAKOUR">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Text>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <HBox alignment="CENTER" style="-fx-background-color: #008B8B;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Imagenes/piobaroja.jpg" />
+               </image>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </ImageView>
+         </children>
+      </HBox>
+   </center>
+</BorderPane>
