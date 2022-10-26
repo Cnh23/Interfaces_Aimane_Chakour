@@ -49,11 +49,11 @@ public class TableController {
     private TableColumn<Persona, Integer> coltlf;
     
     private ObservableList<Persona> data = FXCollections.observableArrayList(
-    	    new Persona("Jacob", "Smith", "jacob.smith@example.com", null, null, null, 30, null, 0),
-    	    new Persona("Isabella", "Johnson", "isabella.johnson@example.com", null, null, null, 40, null, 0),
-    	    new Persona("Ethan", "Williams", "ethan.williams@example.com", null, null, null, 50, null, 0),
-    	    new Persona("Emma", "Jones", "emma.jones@example.com", null, null, null, 61, null, 0),
-    	    new Persona("Michael", "Brown", "michael.brown@example.com", null, null, null, 34, null, 0)
+    	    new Persona("Pepe Fernandez", "Coche", "Semestrales", "Limitada", "Pepe@ejemplo.ejemplo", "23/05/1987", 28001, "Calle ejemplo 1", 123456789),
+    	    new Persona("Jose Luis García", "Hogar", "Trimestrales", "Básica", "Jose@ejemplo.ejemplo", "10/02/1969", 28000, "Calle ejemplo 2", 987654321),
+    	    new Persona("Carlos Pérez", "Hogar", "Semestrales", "Amplia", "Carlos@ejemplo.ejemplo", "05/05/1999", 28002, "Calle ejemplo 3", 456789123),
+    	    new Persona("Andrea Casado", "Moto", "Semestrales", "Básica", "Andrea@ejemplo.ejemplo", "11/10/1995", 28003, "Calle ejemplo 4", 678912345),
+    	    new Persona("Lionel Messi", "Coche", "Anuales", "Amplia Plus", "Leo@ejemplo.ejemplo", "10/10/1985", 28004, "Calle ejemplo 5", 234567890)
     	);
     @FXML
     void initialize() {

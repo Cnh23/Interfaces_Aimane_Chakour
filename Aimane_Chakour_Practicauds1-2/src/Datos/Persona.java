@@ -26,88 +26,139 @@ public class Persona {
         this.sdireccion = new SimpleStringProperty(direccion);
         this.itelefono = new SimpleIntegerProperty(telefono);
     }
- 
-    
-    
-    
-    public String getsNombreyApellidos() {
-		return sNombreyApellidos.get();
+
+	public final SimpleStringProperty sNombreyApellidosProperty() {
+		return this.sNombreyApellidos;
 	}
+	
 
-    public void setsNombreyApellidos(String NombreyApellidos) {
-		sNombreyApellidos.set(NombreyApellidos);
+	public final String getSNombreyApellidos() {
+		return this.sNombreyApellidosProperty().get();
 	}
+	
 
-
-	public String getPoliza() {
-		return sPoliza.get();
+	public final void setSNombreyApellidos(final String sNombreyApellidos) {
+		this.sNombreyApellidosProperty().set(sNombreyApellidos);
 	}
+	
 
-    public void setsPoliza(String Poliza) {
-    	sPoliza.set(Poliza);
+	public final SimpleStringProperty sPolizaProperty() {
+		return this.sPoliza;
 	}
+	
 
-
-	public String getPrima() {
-		return sPrima.get();
+	public final String getSPoliza() {
+		return this.sPolizaProperty().get();
 	}
+	
 
-    public void setsPrima(String Prima) {
-    	sPrima.set(Prima);
+	public final void setSPoliza(final String sPoliza) {
+		this.sPolizaProperty().set(sPoliza);
 	}
+	
 
-
-	public String getCobertura() {
-		return sCobertura.get();
+	public final SimpleStringProperty sPrimaProperty() {
+		return this.sPrima;
 	}
+	
 
-    public void setsCobertura(String Cobertura) {
-    	sCobertura.set(Cobertura);
+	public final String getSPrima() {
+		return this.sPrimaProperty().get();
 	}
+	
 
-
-	public String getCorreo() {
-		return sCorreo.get();
+	public final void setSPrima(final String sPrima) {
+		this.sPrimaProperty().set(sPrima);
 	}
+	
 
-    public void setsCorreo(String correo) {
-    	sCorreo.set(correo);
+	public final SimpleStringProperty sCoberturaProperty() {
+		return this.sCobertura;
 	}
+	
 
-
-	public String getFechanac() {
-		return sfechanac.get();
+	public final String getSCobertura() {
+		return this.sCoberturaProperty().get();
 	}
+	
 
-
-    public void setsfechanac(String fechanac) {
-    	sfechanac.set(fechanac);
+	public final void setSCobertura(final String sCobertura) {
+		this.sCoberturaProperty().set(sCobertura);
 	}
+	
 
-	public int getcPostal() {
-		return icPostal.get();
+	public final SimpleStringProperty sCorreoProperty() {
+		return this.sCorreo;
 	}
+	
 
-    public void seticPostal(int cPostal) {
-    	icPostal.set(cPostal);
+	public final String getSCorreo() {
+		return this.sCorreoProperty().get();
 	}
+	
 
-
-	public String getDireccion() {
-		return sdireccion.get();
+	public final void setSCorreo(final String sCorreo) {
+		this.sCorreoProperty().set(sCorreo);
 	}
+	
 
-    public void setsdireccion(String direccion) {
-    	sdireccion.set(direccion);
+	public final SimpleStringProperty sfechanacProperty() {
+		return this.sfechanac;
 	}
+	
 
-
-	public int getTelefono() {
-		return itelefono.get();
+	public final String getSfechanac() {
+		return this.sfechanacProperty().get();
 	}
+	
 
-    public void setitelefono(int telefono) {
-    	itelefono.set(telefono);
+	public final void setSfechanac(final String sfechanac) {
+		this.sfechanacProperty().set(sfechanac);
 	}
+	
 
+	public final SimpleIntegerProperty icPostalProperty() {
+		return this.icPostal;
+	}
+	
+
+	public final int getIcPostal() {
+		return this.icPostalProperty().get();
+	}
+	
+
+	public final void setIcPostal(final int icPostal) {
+		this.icPostalProperty().set(icPostal);
+	}
+	
+
+	public final SimpleStringProperty sdireccionProperty() {
+		return this.sdireccion;
+	}
+	
+
+	public final String getSdireccion() {
+		return this.sdireccionProperty().get();
+	}
+	
+
+	public final void setSdireccion(final String sdireccion) {
+		this.sdireccionProperty().set(sdireccion);
+	}
+	
+
+	public final SimpleIntegerProperty itelefonoProperty() {
+		return this.itelefono;
+	}
+	
+
+	public final int getItelefono() {
+		return this.itelefonoProperty().get();
+	}
+	
+
+	public final void setItelefono(final int itelefono) {
+		this.itelefonoProperty().set(itelefono);
+	}
+	
 }

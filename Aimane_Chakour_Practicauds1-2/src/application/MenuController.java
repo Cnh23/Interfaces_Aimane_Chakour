@@ -67,6 +67,22 @@ public class MenuController {
      }
      
      @FXML
+     private void abrirInstrucciones(ActionEvent event) {    	
+     	try {
+ 			// Cargamos el archivo Controles Dinámicos
+ 			FXMLLoader loader = new FXMLLoader();
+ 			loader.setLocation(MenuController.class.getResource("/Final/Final.fxml"));
+ 			AnchorPane listadoControles = (AnchorPane) loader.load();
+
+ 			// Se sitúa en el centro del diseño principal
+ 			rootLayout.setCenter(listadoControles);
+ 			
+ 		} catch (IOException e) {
+ 			e.printStackTrace();
+ 		}
+     }
+     
+     @FXML
      private void cerrarListado(ActionEvent event) {    	
      	// Se elimina el contenido del nodo central
      	rootLayout.setCenter(null);	

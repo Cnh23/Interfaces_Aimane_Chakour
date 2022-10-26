@@ -18,24 +18,26 @@
          <children>
             <MenuBar>
               <menus>
-                <Menu mnemonicParsing="false" text="File">
+                <Menu mnemonicParsing="false" text="Revisar">
+                  <items>
+                        <MenuItem mnemonicParsing="false" onAction="#abrirDatos" text="Datos" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Crear">
                   <items>
                     <MenuItem mnemonicParsing="false" onAction="#abrirFormulario" text="Formulario" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Otras Pantallas">
+                  <items>
                         <MenuItem mnemonicParsing="false" onAction="#abrirInicio" text="Inicio" />
-                        <MenuItem mnemonicParsing="false" onAction="#abrirDatos" text="Datos" />
-                        <MenuItem mnemonicParsing="false" text="Final" />
                   </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Edit">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Delete" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Help">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="About" />
-                  </items>
-                </Menu>
+                  <Menu mnemonicParsing="false" text="Leer">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#abrirInstrucciones" text="Instrucciones" />
+                    </items>
+                  </Menu>
               </menus>
             </MenuBar>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ASEGURADORA PÍO BAROJA">
