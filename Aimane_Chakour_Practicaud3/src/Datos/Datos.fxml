@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="Datos.TableController">
+   <children>
+      <TableView fx:id="Table1" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+        <columns>
+          <TableColumn fx:id="colnombre" prefWidth="121.60003662109375" text="Nombre y apellidos" />
+          <TableColumn fx:id="colpoliza" minWidth="0.0" prefWidth="44.0" text="Póliza" />
+            <TableColumn fx:id="colprima" prefWidth="60.79998779296875" text="Prima" />
+            <TableColumn fx:id="colcobertura" prefWidth="75.0" text="Cobertura" />
+            <TableColumn fx:id="colcorreo" prefWidth="75.0" text="Correo" />
+            <TableColumn fx:id="colfechanac" prefWidth="75.0" text="FechaNac" />
+            <TableColumn fx:id="colcp" prefWidth="75.0" text="CP" />
+            <TableColumn fx:id="coldireccion" prefWidth="72.0" text="Direccón" />
+            <TableColumn fx:id="coltlf" prefWidth="75.0" text="Teléfono" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+   </children>
+</AnchorPane>
