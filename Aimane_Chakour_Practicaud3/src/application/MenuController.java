@@ -29,6 +29,8 @@ public class MenuController {
 
  			// Se sitúa en el centro del diseño principal
  			rootLayout.setCenter(listadoControles);
+ 			rootLayout.setBottom(null);
+ 			
  			
  		} catch (IOException e) {
  			e.printStackTrace();

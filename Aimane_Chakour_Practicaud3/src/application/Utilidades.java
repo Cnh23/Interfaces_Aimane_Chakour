@@ -40,4 +40,40 @@ public class Utilidades {
     	// Try to parse the String.
     	return Utilidades.parse(dateString) != null;
     }
+    
+    public static boolean validarDni(String dni) {
+    	
+    	if(dni.length() != 9 || Character.isLetter(dni.charAt(8)) == false) {
+    		return false;
+    	}
+    	if(solonumeros(dni) == true) {
+    	return true;
+    	}
+    	else {
+    		return false;
+    	}
+	}
+    
+    public static boolean solonumeros(String dni) {
+    	int i, j = 0;
+    	String numero = "";
+    	String miDni = "";
+    	String[] ceronueve = {"0","1","2","3","4","5","6","7","8","9"};
+    	
+    	for(i = 0; i<dni.length() - 1; i++) {
+    		numero = dni.substring(i, i+1);
+    		
+    		for(j = 0; j < ceronueve.length; j++) {
+    			if(numero.equals(ceronueve[j])) {
+    				miDni += ceronueve[j];
+    			}
+    		}
+    	}
+    	if (miDni.length() != 8) {
+    		return false;
+		}
+    	else {
+    		return true;
+    	}
+    }
 }

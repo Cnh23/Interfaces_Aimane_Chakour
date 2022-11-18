@@ -5,6 +5,9 @@ import java.util.ResourceBundle;
 
 import Datos.Persona;
 import application.Utilidades;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.RadioButton;
@@ -12,8 +15,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
-import javafx.stage.Stage;
-
 public class FormController {
     @FXML
     private ResourceBundle resources;
@@ -47,6 +48,9 @@ public class FormController {
 
     @FXML
     private TableColumn<Persona, String> nyaCol;
+    
+    @FXML
+    private TableColumn<Persona, String> apeCol;
 
     @FXML
     private TableView<Persona> tablaPersonas;
@@ -58,27 +62,20 @@ public class FormController {
     private RadioButton termsRB;
     // Este componente será un diálogo. Campos auxiliares para su gestión
 
-    private Persona persona;
-    private boolean InsertarClicked = false; 
+	// Listado de personas de la aplicación
+	private ObservableList<Persona> personaData = FXCollections.observableArrayList();
+	
     
     @FXML
     void initialize() {
-        assert ApellidosField != null : "fx:id=\"ApellidosField\" was not injected: check your FXML file 'Formulario.fxml'.";
-        assert correoField != null : "fx:id=\"correoField\" was not injected: check your FXML file 'Formulario.fxml'.";
-        assert cpField != null : "fx:id=\"cpField\" was not injected: check your FXML file 'Formulario.fxml'.";
-        assert direccionField != null : "fx:id=\"direccionField\" was not injected: check your FXML file 'Formulario.fxml'.";
-        assert dniCol != null : "fx:id=\"dniCol\" was not injected: check your FXML file 'Formulario.fxml'.";
-        assert dniField != null : "fx:id=\"dniField\" was not injected: check your FXML file 'Formulario.fxml'.";
-        assert fechanacField != null : "fx:id=\"fechanacField\" was not injected: check your FXML file 'Formulario.fxml'.";
-        assert nombreField != null : "fx:id=\"nombreField\" was not injected: check your FXML file 'Formulario.fxml'.";
-        assert nyaCol != null : "fx:id=\"nyaCol\" was not injected: check your FXML file 'Formulario.fxml'.";
-        assert tablaPersonas != null : "fx:id=\"tablaPersonas\" was not injected: check your FXML file 'Formulario.fxml'.";
-        assert telField != null : "fx:id=\"telField\" was not injected: check your FXML file 'Formulario.fxml'.";
-        assert termsRB != null : "fx:id=\"termsRB\" was not injected: check your FXML file 'Formulario.fxml'.";
+    	// Se inicializan las columnas firstName y lastName
+    	nyaCol.setCellValueFactory(cellData -> cellData.getValue().sNombreProperty());
+    	apeCol.setCellValueFactory(cellData -> cellData.getValue().sApellidosProperty());
+    	dniCol.setCellValueFactory(cellData -> cellData.getValue().sDniProperty());
+    	
     }
     
     public void setPersona(Persona persona) {
-    	this.persona = persona;
     	
     	nombreField.setText(persona.getSNombre());
     	ApellidosField.setText(persona.getSApellidos());
@@ -88,26 +85,49 @@ public class FormController {
     	cpField.setText(Integer.toString(persona.getIcPostal()));
     	direccionField.setText(persona.getSdireccion());
     	telField.setText(Integer.toString(persona.getItelefono()));
-    }
-    
-    public boolean isOkClicked() {
-        return InsertarClicked;
-    }
-    
-    private void InsertarClick() {
-        if (isInputValid()) {
-            persona.setSNombre(nombreField.getText());
-            persona.setSApellidos(ApellidosField.getText());
-            persona.setSDni(dniField.getText());
-            persona.setSCorreo(correoField.getText());
-            persona.setSfechanac(Utilidades.parse(fechanacField.getText()));
-            persona.setIcPostal(Integer.parseInt(cpField.getText()));
-            persona.setSdireccion(direccionField.getText());
-            persona.setItelefono(Integer.parseInt(telField.getText()));
 
-            InsertarClicked = true;
-        }
+
     }
+    
+	
+    @FXML
+    private void InsertarClick(ActionEvent event) {
+        if (isInputValid()) {
+            Persona pers = new Persona(null, null, null, null, null, null, null, null, 0, null, 0);
+            
+            pers.setSNombre(nombreField.getText());
+            pers.setSApellidos(ApellidosField.getText());
+            pers.setSDni(dniField.getText());
+            pers.setSCorreo(correoField.getText());
+            pers.setSfechanac(Utilidades.parse(fechanacField.getText()));
+            pers.setIcPostal(Integer.parseInt(cpField.getText()));
+            pers.setSdireccion(direccionField.getText());
+            pers.setItelefono(Integer.parseInt(telField.getText()));
+            
+            setPersona(pers);
+            
+            if(!personaData.contains(pers)) {
+            getPersonData().add(pers);
+            tablaPersonas.setItems(getPersonData());
+            }
+            
+            restablecerFrom();
+        }
+   }
+    
+    
+    private void restablecerFrom() {
+        nombreField.setText(null);
+        ApellidosField.setText(null);
+        dniField.setText(null);
+        correoField.setText(null);
+        fechanacField.setText(null);
+        cpField.setText(null);
+        direccionField.setText(null);
+        telField.setText(null);
+    }
+    
+    
     private boolean isInputValid() {
         String errorMessage = "";
 
@@ -119,6 +139,11 @@ public class FormController {
         }
         if (dniField.getText() == null || dniField.getText().length() == 0) {
             errorMessage += "El campo DNI está vacío\n"; 
+        }
+        else {
+        	if (!Utilidades.validarDni(dniField.getText())) {
+        		errorMessage += "El campo DNI no es válido\n";
+			}
         }
 
         if (correoField.getText() == null || correoField.getText().length() == 0) {
@@ -137,7 +162,6 @@ public class FormController {
                 errorMessage += "Código postal o Teléfono no válido. Debe ser un número entero\n"; 
             }
         }
-        
         
 
         if (fechanacField.getText() == null || fechanacField.getText().length() == 0) {
@@ -162,6 +186,10 @@ public class FormController {
             return false;
         }
     }
+    
+	public ObservableList<Persona> getPersonData() {
+		return personaData;
+	}
 
     
 }

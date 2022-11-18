@@ -21,7 +21,6 @@ public class Persona {
     private final IntegerProperty icPostal;
     private final StringProperty sdireccion;
     private final IntegerProperty itelefono;
-    
 
 	public Persona(String Nombre, String Apellidos, String Dni, String Poliza, String Prima, String Cobertura, String Correo, LocalDate fechanac, int cPostal, String direccion, int telefono) {
         
@@ -39,200 +38,236 @@ public class Persona {
     }
 
 
-	public final StringProperty sNombreProperty() {
+
+
+
+
+	public StringProperty sNombreProperty() {
 		return this.sNombre;
 	}
 	
 
 
-	public final String getSNombre() {
-		return this.sNombreProperty().get();
+
+	public String getSNombre() {
+		return this.sNombre.get();
 	}
 	
 
 
-	public final void setSNombre(final String sNombre) {
-		this.sNombreProperty().set(sNombre);
+
+	public void setSNombre(String sNombre) {
+		this.sNombre.set(sNombre);
 	}
 	
 
 
-	public final StringProperty sApellidosProperty() {
+
+	public StringProperty sApellidosProperty() {
 		return this.sApellidos;
 	}
 	
 
 
-	public final String getSApellidos() {
-		return this.sApellidosProperty().get();
+
+	public String getSApellidos() {
+		return this.sApellidos.get();
 	}
 	
 
 
-	public final void setSApellidos(final String sApellidos) {
-		this.sApellidosProperty().set(sApellidos);
+
+	public void setSApellidos(String sApellidos) {
+		this.sApellidos.set(sApellidos);
 	}
 	
 
 
-	public final StringProperty sDniProperty() {
+
+	public StringProperty sDniProperty() {
 		return this.sDni;
 	}
 	
 
 
-	public final String getSDni() {
-		return this.sDniProperty().get();
+
+	public String getSDni() {
+		return this.sDni.get();
 	}
 	
 
 
-	public final void setSDni(final String sDni) {
-		this.sDniProperty().set(sDni);
+
+	public void setSDni(String sDni) {
+		this.sDni.set(sDni);
 	}
 	
 
 
-	public final StringProperty sPolizaProperty() {
+
+	public StringProperty sPolizaProperty() {
 		return this.sPoliza;
 	}
 	
 
 
-	public final String getSPoliza() {
-		return this.sPolizaProperty().get();
+
+	public String getSPoliza() {
+		return this.sPoliza.get();
 	}
 	
 
 
-	public final void setSPoliza(final String sPoliza) {
-		this.sPolizaProperty().set(sPoliza);
+
+	public void setSPoliza(String sPoliza) {
+		this.sPoliza.set(sPoliza);
 	}
 	
 
 
-	public final StringProperty sPrimaProperty() {
+
+	public StringProperty sPrimaProperty() {
 		return this.sPrima;
 	}
 	
 
 
-	public final String getSPrima() {
-		return this.sPrimaProperty().get();
+
+	public String getSPrima() {
+		return this.sPrima.get();
 	}
 	
 
 
-	public final void setSPrima(final String sPrima) {
-		this.sPrimaProperty().set(sPrima);
+
+	public void setSPrima(String sPrima) {
+		this.sPrima.set(sPrima);
 	}
 	
 
 
-	public final StringProperty sCoberturaProperty() {
+
+	public StringProperty sCoberturaProperty() {
 		return this.sCobertura;
 	}
 	
 
 
-	public final String getSCobertura() {
-		return this.sCoberturaProperty().get();
+
+	public String getSCobertura() {
+		return this.sCobertura.get();
 	}
 	
 
 
-	public final void setSCobertura(final String sCobertura) {
-		this.sCoberturaProperty().set(sCobertura);
+
+	public void setSCobertura(String sCobertura) {
+		this.sCobertura.set(sCobertura);
 	}
 	
 
 
-	public final StringProperty sCorreoProperty() {
+
+	public StringProperty sCorreoProperty() {
 		return this.sCorreo;
 	}
 	
 
 
-	public final String getSCorreo() {
-		return this.sCorreoProperty().get();
+
+	public String getSCorreo() {
+		return this.sCorreo.get();
 	}
 	
 
 
-	public final void setSCorreo(final String sCorreo) {
-		this.sCorreoProperty().set(sCorreo);
+
+	public void setSCorreo(String sCorreo) {
+		this.sCorreo.set(sCorreo);
 	}
 	
 
 
-	public final ObjectProperty<LocalDate> sfechanacProperty() {
+
+	public ObjectProperty<LocalDate> sfechanacProperty() {
 		return this.sfechanac;
 	}
 	
 
 
-	public final LocalDate getSfechanac() {
-		return this.sfechanacProperty().get();
+
+	public LocalDate getSfechanac() {
+		return this.sfechanac.get();
 	}
 	
 
 
-	public final void setSfechanac(final LocalDate sfechanac) {
-		this.sfechanacProperty().set(sfechanac);
+
+	public void setSfechanac(LocalDate sfechanac) {
+		this.sfechanac.set(sfechanac);
 	}
 	
 
 
-	public final IntegerProperty icPostalProperty() {
+
+	public IntegerProperty icPostalProperty() {
 		return this.icPostal;
 	}
 	
 
 
-	public final int getIcPostal() {
-		return this.icPostalProperty().get();
+
+	public int getIcPostal() {
+		return this.icPostal.get();
 	}
 	
 
 
-	public final void setIcPostal(final int icPostal) {
-		this.icPostalProperty().set(icPostal);
+
+	public void setIcPostal(int icPostal) {
+		this.icPostal.set(icPostal);
 	}
 	
 
 
-	public final StringProperty sdireccionProperty() {
+
+	public StringProperty sdireccionProperty() {
 		return this.sdireccion;
 	}
 	
 
 
-	public final String getSdireccion() {
-		return this.sdireccionProperty().get();
+
+	public String getSdireccion() {
+		return this.sdireccion.get();
 	}
 	
 
 
-	public final void setSdireccion(final String sdireccion) {
-		this.sdireccionProperty().set(sdireccion);
+
+	public void setSdireccion(String sdireccion) {
+		this.sdireccion.set(sdireccion);
 	}
 	
 
 
-	public final IntegerProperty itelefonoProperty() {
+
+	public IntegerProperty itelefonoProperty() {
 		return this.itelefono;
 	}
 	
 
 
-	public final int getItelefono() {
-		return this.itelefonoProperty().get();
+
+	public int getItelefono() {
+		return this.itelefono.get();
 	}
 	
 
 
-	public final void setItelefono(final int itelefono) {
-		this.itelefonoProperty().set(itelefono);
+
+	public void setItelefono(int itelefono) {
+		this.itelefono.set(itelefono);
 	}
 	
 

@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -25,7 +27,7 @@
                 </Menu>
                 <Menu mnemonicParsing="false" text="Crear">
                   <items>
-                    <MenuItem mnemonicParsing="false" onAction="#abrirFormulario" text="Formulario" />
+                    <MenuItem mnemonicParsing="false" text="Formulario" />
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Otras Pantallas">
@@ -73,4 +75,15 @@
          </children>
       </HBox>
    </center>
+   <bottom>
+      <AnchorPane prefHeight="50.0" style="-fx-background-color: #008B8B;" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#abrirFormulario" text="INICIAR" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </bottom>
 </BorderPane>
