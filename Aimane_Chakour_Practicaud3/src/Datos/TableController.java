@@ -4,7 +4,8 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
-import Formulario.FormController;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -52,13 +53,13 @@ public class TableController {
 
     @FXML
     private TableColumn<Persona, Integer> coltlf;
-    
-    // Referencia a la aplicación principal
-    private FormController formcont;
-    
+	
+	// Listado de personas de la aplicación
+	private ObservableList<Persona> personaData = FXCollections.observableArrayList();
+	
     @FXML
     void initialize() {
-        
+    	
     	colNombre.setCellValueFactory(cellData -> cellData.getValue().sNombreProperty());
     	colApellidos.setCellValueFactory(cellData -> cellData.getValue().sApellidosProperty());
     	colDni.setCellValueFactory(cellData -> cellData.getValue().sDniProperty());
@@ -75,10 +76,12 @@ public class TableController {
     	//Table1.setItems(data);  
     }
     
-    public void setFormApp(FormController fc) {
-    	this.formcont = fc;
+    public void insertarPersona(Persona persona) {
     	
-    	Table1.setItems(this.formcont.getPersonData());
     }
+    
+	public ObservableList<Persona> getPersonData() {
+		return personaData;
+	}
 
 }

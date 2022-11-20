@@ -22,7 +22,7 @@
               <menus>
                 <Menu mnemonicParsing="false" text="Revisar">
                   <items>
-                        <MenuItem mnemonicParsing="false" onAction="#abrirDatos" text="Datos" />
+                        <MenuItem mnemonicParsing="false" text="Datos" />
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Crear">

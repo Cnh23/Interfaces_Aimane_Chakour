@@ -3,6 +3,8 @@ package application;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 public class Utilidades {
@@ -75,5 +77,18 @@ public class Utilidades {
     	else {
     		return true;
     	}
+    }
+    public static boolean validarCorreo(String email) {
+    	// Patrón para validar el email
+        Pattern pattern = Pattern
+                .compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+                        + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+        
+        Matcher mather = pattern.matcher(email);
+        if (mather.find() == true) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
