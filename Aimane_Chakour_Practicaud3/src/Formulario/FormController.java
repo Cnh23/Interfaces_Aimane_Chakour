@@ -125,6 +125,11 @@ public class FormController {
     
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
     @FXML
+    void vaciarForm(ActionEvent event) {
+    	restablecerFrom();
+    }
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    @FXML
     void seleccionar(MouseEvent event) {
     	Persona selecpersona = this.tablaPersonas.getSelectionModel().getSelectedItem();
     	if(selecpersona!=null) {

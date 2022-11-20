@@ -20,26 +20,11 @@
          <children>
             <MenuBar>
               <menus>
-                <Menu mnemonicParsing="false" text="Revisar">
+                <Menu mnemonicParsing="false" text="Ayuda">
                   <items>
-                        <MenuItem mnemonicParsing="false" text="Datos" />
+                        <MenuItem mnemonicParsing="false" onAction="#AbrirInstrucciones" text="Instrucciones" />
                   </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Crear">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Formulario" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Otras Pantallas">
-                  <items>
-                        <MenuItem mnemonicParsing="false" onAction="#abrirInicio" text="Inicio" />
-                  </items>
-                </Menu>
-                  <Menu mnemonicParsing="false" text="Leer">
-                    <items>
-                        <MenuItem mnemonicParsing="false" onAction="#abrirInstrucciones" text="Instrucciones" />
-                    </items>
-                  </Menu>
               </menus>
             </MenuBar>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ASEGURADORA PÍO BAROJA">
@@ -80,7 +65,7 @@
          <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#abrirFormulario" text="INICIAR" />
+                  <Button mnemonicParsing="false" onAction="#dialogoInicio" text="INICIAR" />
                </children>
             </HBox>
          </children>
