@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="300.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Inicio.DialogoIniController">
+   <children>
+      <Label layoutX="203.0" layoutY="14.0" text="INCIO DE SESIÓN" />
+      <Hyperlink layoutX="202.0" layoutY="262.0" onAction="#AccesoRegistro" text="Regístrate ahora" />
+      <Button layoutX="220.0" layoutY="198.0" mnemonicParsing="false" onAction="#AccesoForm" text="Acceder" />
+      <TextField fx:id="usuarioField" layoutX="250.0" layoutY="60.0" promptText="Username" />
+      <Label layoutX="115.0" layoutY="64.0" text="USUARIO" />
+      <Label layoutX="115.0" layoutY="141.0" text="CONTRASEÑA" />
+      <PasswordField fx:id="contraField" layoutX="251.0" layoutY="137.0" promptText="Password" />
+   </children>
+</AnchorPane>

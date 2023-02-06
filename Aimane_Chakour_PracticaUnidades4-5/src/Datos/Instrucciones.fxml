@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Datos.InstruccionesController">
+   <children>
+      <VBox alignment="CENTER" spacing="50.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button mnemonicParsing="false" onMouseClicked="#respuestaUno" text="¿Cuál es el usuario y la contraseña de acceso?" />
+            <Button mnemonicParsing="false" onMouseClicked="#respuestaDos" text="¿Cómo puedo introducir los datos de un nuevo cliente?" />
+            <Button mnemonicParsing="false" onMouseClicked="#respuestaTres" text="¿Porqué no puedo crear un usuario nuevo?" />
+            <Button mnemonicParsing="false" onMouseClicked="#respuestaCuatro" text="¿Cómo puedo modificar los datos de un cliente?´" />
+            <Button mnemonicParsing="false" onMouseClicked="#respuestaCinco" text="¿Cómo puedo eliminar los datos de un cliente?" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
