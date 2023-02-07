@@ -1,13 +1,17 @@
 package ch.makery.adress.view;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import ch.makery.adress.Main;
 import ch.makery.adress.model.Persona;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.RadioButton;
@@ -15,6 +19,9 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ChoiceBox;
 public class FormController {
@@ -71,10 +78,13 @@ public class FormController {
 
     @FXML
     private RadioButton termsRB;
+    
+    
+    
     // Este componente será un diálogo. Campos auxiliares para su gestión
-
+ 	private Stage primaryStage;
 	// Listado de personas de la aplicación
-	private ObservableList<Persona> personaData = FXCollections.observableArrayList();
+	private static ObservableList<Persona> personaData = FXCollections.observableArrayList();
 	
 	
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -350,9 +360,37 @@ public class FormController {
     }
     
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
-	public ObservableList<Persona> getPersonData() {
+	public static ObservableList<Persona> getPersonData() {
 		return personaData;
 	}
 
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    @FXML
+    void AbrirGrafico(MouseEvent event) {
+  	    try {
+	        // Cargamos el diseño del diálogo desde un XML
+	        FXMLLoader loader = new FXMLLoader();
+	        loader.setLocation(Main.class.getResource("view/Grafico.fxml"));
+	        AnchorPane page = (AnchorPane) loader.load();
+
+	        // Se crea un nuevo Stage para mostrar el diálogo
+	        Stage dialogStage = new Stage();
+	        dialogStage.setTitle("Gráficos de primas");
+	        dialogStage.initModality(Modality.WINDOW_MODAL);
+	        
+	        
+	        dialogStage.initOwner(primaryStage);
+	        Scene scene = new Scene(page);
+	        dialogStage.setScene(scene);
+	        GraficoController controller = loader.getController();
+	        controller.setDialogStage(dialogStage);	
+	        
+	        // Muestra el diálogo y no continúa el código hasta que lo cierra el usuario
+	        dialogStage.showAndWait();
+
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
     
-}
+    }
+    }

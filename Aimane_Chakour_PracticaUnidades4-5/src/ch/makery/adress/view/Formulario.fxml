@@ -22,12 +22,22 @@
 <AnchorPane prefHeight="400.0" prefWidth="681.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.adress.view.FormController">
       <AnchorPane prefHeight="40.0" style="-fx-background-color: #008B8B;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
       <children>
-         <HBox prefHeight="30.0" prefWidth="202.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+         <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-               <Button mnemonicParsing="false" onAction="#InsertarClick" text="Insertar" />
-               <Button mnemonicParsing="false" onAction="#borrarPersona" text="Borrar" />
-               <Button mnemonicParsing="false" onAction="#ModificarDatos" text="Modificar" />
-            </children></HBox>
+               <HBox alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="190.0" spacing="5.0">
+                  <children>
+                     <Button mnemonicParsing="false" onAction="#InsertarClick" text="Insertar" />
+                     <Button mnemonicParsing="false" onAction="#borrarPersona" text="Borrar" />
+                     <Button mnemonicParsing="false" onAction="#ModificarDatos" text="Modificar" />
+                  </children>
+               </HBox>
+               <HBox alignment="CENTER" prefHeight="40.0" prefWidth="133.0" spacing="5.0">
+                  <children>
+                     <Button mnemonicParsing="false" onMouseClicked="#AbrirGrafico" text="Gráficos" />
+                  </children>
+               </HBox>
+            </children>
+         </HBox>
       </children>
       </AnchorPane>
       <Pane prefHeight="365.0" prefWidth="104.0" style="-fx-background-color: #008B8B;" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
