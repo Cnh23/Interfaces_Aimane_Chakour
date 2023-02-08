@@ -96,12 +96,12 @@ public class FormController {
     	primaChoice.getItems().addAll("Trimestrales","Semestrales","Anuales");
    	
 		if(personaData.isEmpty()) {
-			personaData.add(new Persona("ClienteUno","Uno", "12345678A", "Trimestrales", "Coche", "Amplia", "Clienteuno@cliente.com", Utilidades.parse("12/12/2000"), 28001, "Calle uno", 666666661));
-			personaData.add(new Persona("ClienteDos","Dos", "12345678B", "Semestrales", "Salud", "Limitada", "Clientedos@cliente.com", Utilidades.parse("12/12/2001"), 28002, "Calle dos", 666666662));
-			personaData.add(new Persona("ClienteTres","Tres",  "12345678D", "Trimestrales", "Coche", "Básica", "Clientetres@cliente.com", Utilidades.parse("12/12/2002"), 28003,"Calle tres", 666666663));
-			personaData.add(new Persona("ClienteCuatro","Cuatro", "12345678E", "Semestrales", "Vida", "Amplia", "Clientecuatro@cliente.com", Utilidades.parse("12/12/2003"), 28004,"Calle cuatro", 666666664));
-			personaData.add(new Persona("ClienteCinco","Cinco", "12345678F", "Trimestrales", "Salud", "Limitada", "Clientecinco@cliente.com", Utilidades.parse("12/12/2004"), 28005,"Calle cinco", 666666665));
-			personaData.add(new Persona("ClienteSeis","Seis", "12345678G", "Anuales", "Moto", "Básica", "Clienteseis@cliente.com", Utilidades.parse("12/12/2005"), 28006,"Calle seis", 666666666));
+			personaData.add(new Persona("ClienteUno","Uno", "12345678A", "Trimestrales", "Coche", "Amplia", "Clienteuno@cliente.com", Utilidades.parse("12/12/2000"), 28001, "Madrid", 666666661));
+			personaData.add(new Persona("ClienteDos","Dos", "12345678B", "Semestrales", "Salud", "Limitada", "Clientedos@cliente.com", Utilidades.parse("12/12/2001"), 28002, "Madrid", 666666662));
+			personaData.add(new Persona("ClienteTres","Tres",  "12345678D", "Trimestrales", "Coche", "Básica", "Clientetres@cliente.com", Utilidades.parse("12/12/2002"), 28003,"Barcelona", 666666663));
+			personaData.add(new Persona("ClienteCuatro","Cuatro", "12345678E", "Semestrales", "Vida", "Amplia", "Clientecuatro@cliente.com", Utilidades.parse("12/12/2003"), 28004,"Barcelona", 666666664));
+			personaData.add(new Persona("ClienteCinco","Cinco", "12345678F", "Trimestrales", "Salud", "Limitada", "Clientecinco@cliente.com", Utilidades.parse("12/12/2004"), 28005,"Madrid", 666666665));
+			personaData.add(new Persona("ClienteSeis","Seis", "12345678G", "Anuales", "Coche", "Básica", "Clienteseis@cliente.com", Utilidades.parse("12/12/2005"), 28006,"Madrid", 666666666));
 		}
 		  tablaPersonas.setItems(personaData);
     	
@@ -370,20 +370,20 @@ public class FormController {
   	    try {
 	        // Cargamos el diseño del diálogo desde un XML
 	        FXMLLoader loader = new FXMLLoader();
-	        loader.setLocation(Main.class.getResource("view/Grafico.fxml"));
+	        loader.setLocation(FormController.class.getResource("Grafico.fxml"));
 	        AnchorPane page = (AnchorPane) loader.load();
 
 	        // Se crea un nuevo Stage para mostrar el diálogo
 	        Stage dialogStage = new Stage();
-	        dialogStage.setTitle("Gráficos de primas");
+	        dialogStage.setTitle("Gráficos generales");
 	        dialogStage.initModality(Modality.WINDOW_MODAL);
 	        
 	        
-	        dialogStage.initOwner(primaryStage);
 	        Scene scene = new Scene(page);
 	        dialogStage.setScene(scene);
+	        
 	        GraficoController controller = loader.getController();
-	        controller.setDialogStage(dialogStage);	
+	        controller.setDialogStage(dialogStage);
 	        
 	        // Muestra el diálogo y no continúa el código hasta que lo cierra el usuario
 	        dialogStage.showAndWait();
