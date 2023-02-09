@@ -19,15 +19,15 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="681.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.adress.view.FormController">
-      <AnchorPane prefHeight="40.0" style="-fx-background-color: #008B8B;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+<AnchorPane prefHeight="400.0" prefWidth="681.0" stylesheets="@../style/general.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.adress.view.FormController">
+      <AnchorPane prefHeight="40.0" prefWidth="681.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
       <children>
-         <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="5.0">
             <children>
-               <HBox alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="190.0" spacing="5.0">
+               <HBox alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="224.0" spacing="5.0">
                   <children>
                      <Button mnemonicParsing="false" onAction="#InsertarClick" text="Insertar" />
-                     <Button mnemonicParsing="false" onAction="#borrarPersona" text="Borrar" />
+                     <Button id="borrar" mnemonicParsing="false" onAction="#borrarPersona" text="Borrar" />
                      <Button mnemonicParsing="false" onAction="#ModificarDatos" text="Modificar" />
                   </children>
                </HBox>
@@ -40,7 +40,7 @@
          </HBox>
       </children>
       </AnchorPane>
-      <Pane prefHeight="365.0" prefWidth="104.0" style="-fx-background-color: #008B8B;" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Pane prefHeight="365.0" prefWidth="104.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Text layoutX="-104.0" layoutY="191.0" rotate="-90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FORMULARIO">
                <font>
@@ -51,11 +51,11 @@
       </Pane>
    <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="104.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <center>
-         <SplitPane dividerPositions="0.3685275080906149" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <SplitPane id="Split" dividerPositions="0.3685275080906149" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <items>
                <AnchorPane>
                   <children>
-                     <TableView fx:id="tablaPersonas" onMouseClicked="#seleccionar" prefHeight="364.0" prefWidth="172.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <TableView fx:id="tablaPersonas" onMouseClicked="#seleccionar" prefHeight="364.0" prefWidth="172.0" styleClass="tableV" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                        <columns>
                          <TableColumn fx:id="nyaCol" prefWidth="117.60003358125687" text="Nombre" />
                            <TableColumn fx:id="apeCol" prefWidth="75.0" text="Apellidos" />
@@ -69,7 +69,7 @@
                </AnchorPane>
                <AnchorPane>
                   <children>
-                        <GridPane alignment="CENTER_LEFT" prefHeight="364.0" prefWidth="311.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <GridPane alignment="CENTER_LEFT" prefHeight="364.0" prefWidth="311.0" styleClass="gridpane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                           <columnConstraints>
                             <ColumnConstraints hgrow="SOMETIMES" maxWidth="168.20001220703125" minWidth="10.0" prefWidth="144.40001678466797" />
                             <ColumnConstraints hgrow="SOMETIMES" maxWidth="207.0000244140625" minWidth="10.0" prefWidth="169.99996337890622" />
@@ -164,7 +164,7 @@
                                     <Insets left="20.0" right="10.0" />
                                  </GridPane.margin>
                               </TextField>
-                              <RadioButton fx:id="termsRB" mnemonicParsing="false" prefHeight="18.0" prefWidth="152.0" text="Acepto los términos y condiciones" GridPane.columnIndex="1" GridPane.rowIndex="12">
+                              <RadioButton fx:id="termsRB" mnemonicParsing="false" prefHeight="18.0" prefWidth="172.0" text="Acepto los términos y condiciones" GridPane.rowIndex="12">
                                  <GridPane.margin>
                                     <Insets left="20.0" />
                                  </GridPane.margin>
@@ -240,9 +240,9 @@
                               <GridPane.margin>
                                  <Insets left="20.0" />
                               </GridPane.margin></Text>
-                           <Button mnemonicParsing="false" onAction="#vaciarForm" text="Vaciar" GridPane.columnIndex="1" GridPane.rowIndex="13">
+                           <Button id="borrar" mnemonicParsing="false" onAction="#vaciarForm" text="Vaciar" GridPane.columnIndex="1" GridPane.rowIndex="13">
                               <GridPane.margin>
-                                 <Insets left="20.0" />
+                                 <Insets bottom="15.0" left="100.0" />
                               </GridPane.margin>
                            </Button>
                            </children>

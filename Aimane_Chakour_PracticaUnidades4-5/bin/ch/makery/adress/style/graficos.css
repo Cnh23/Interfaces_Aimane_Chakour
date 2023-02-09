@@ -1,0 +1,64 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property D6D6D6 d6d6d6 */
+.root {
+	-fx-background-color: #669999;
+}
+
+.default-color0.chart-pie { 
+	-fx-pie-color: #669933;
+}
+.default-color1.chart-pie {
+	-fx-pie-color: #33CC33;
+}
+.default-color2.chart-pie {
+	-fx-pie-color: #00FF00; 
+}
+
+.chart-pie-label {
+    -fx-fill: yellow;
+    -fx-tick-label-font-size: 11px;
+} 
+
+.chart-legend {
+   -fx-background-color: #000000;
+   -fx-stroke: #69BDF6;
+}
+.chart-legend-item {
+   -fx-text-fill: white;
+}
+
+/* Estilos de las líneas verticales */
+.chart-vertical-grid-lines {
+    -fx-stroke: #CC6699; 
+}
+
+/* Estilos de las líneas horizontales */
+.chart-horizontal-grid-lines {
+    -fx-stroke: #8000ff;
+}
+
+/* Estilos de los ejes */
+.axis {
+	-fx-tick-label-fill: #FF0000;
+	-fx-tick-label-font-size: 11px;
+}
+
+/* Estilos de las etiquetas de los ejes */ 
+.axis-label {
+   -fx-text-fill: yellow; 
+   -fx-font-size: 20px;
+}
+
+/* Estilos de las marcas de los ejes */
+.axis-tick-mark {
+    -fx-stroke: yellow;
+}
+
+.default-color0.chart-bar{
+	-fx-background-color: #669933;
+	-fx-opacity: 0.8;
+}
+
+.default-color1.chart-bar{
+	-fx-background-color: #00FF00;
+	-fx-opacity: 0.8;
+}

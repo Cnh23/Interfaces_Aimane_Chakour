@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import ch.makery.adress.Main;
 import ch.makery.adress.model.Persona;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -81,8 +80,6 @@ public class FormController {
     
     
     
-    // Este componente será un diálogo. Campos auxiliares para su gestión
- 	private Stage primaryStage;
 	// Listado de personas de la aplicación
 	private static ObservableList<Persona> personaData = FXCollections.observableArrayList();
 	
@@ -92,16 +89,18 @@ public class FormController {
     void initialize() {
     	
     	coberturaChoice.getItems().addAll("Básica","Limitada","Amplia","Amplia Plus");
+    	coberturaChoice.setValue("Seleccione cobertura...");
     	poliChoice.getItems().addAll("Coche","Moto","Hogar","Vida", "Salud", "Responsabilidad civil");
+    	poliChoice.setValue("Seleccione póliza...");
     	primaChoice.getItems().addAll("Trimestrales","Semestrales","Anuales");
-   	
+    	primaChoice.setValue("Seleccione prima...");
 		if(personaData.isEmpty()) {
-			personaData.add(new Persona("ClienteUno","Uno", "12345678A", "Trimestrales", "Coche", "Amplia", "Clienteuno@cliente.com", Utilidades.parse("12/12/2000"), 28001, "Madrid", 666666661));
-			personaData.add(new Persona("ClienteDos","Dos", "12345678B", "Semestrales", "Salud", "Limitada", "Clientedos@cliente.com", Utilidades.parse("12/12/2001"), 28002, "Madrid", 666666662));
-			personaData.add(new Persona("ClienteTres","Tres",  "12345678D", "Trimestrales", "Coche", "Básica", "Clientetres@cliente.com", Utilidades.parse("12/12/2002"), 28003,"Barcelona", 666666663));
-			personaData.add(new Persona("ClienteCuatro","Cuatro", "12345678E", "Semestrales", "Vida", "Amplia", "Clientecuatro@cliente.com", Utilidades.parse("12/12/2003"), 28004,"Barcelona", 666666664));
-			personaData.add(new Persona("ClienteCinco","Cinco", "12345678F", "Trimestrales", "Salud", "Limitada", "Clientecinco@cliente.com", Utilidades.parse("12/12/2004"), 28005,"Madrid", 666666665));
-			personaData.add(new Persona("ClienteSeis","Seis", "12345678G", "Anuales", "Coche", "Básica", "Clienteseis@cliente.com", Utilidades.parse("12/12/2005"), 28006,"Madrid", 666666666));
+			personaData.add(new Persona("ClienteUno","Uno", "12345678A", "Coche", "Trimestrales", "Amplia", "Clienteuno@cliente.com", Utilidades.parse("12/12/2000"), 28001, "Madrid", 666666661));
+			personaData.add(new Persona("ClienteDos","Dos", "12345678B", "Salud", "Semestrales", "Limitada", "Clientedos@cliente.com", Utilidades.parse("12/12/2001"), 28002, "Madrid", 666666662));
+			personaData.add(new Persona("ClienteTres","Tres",  "12345678D", "Coche", "Trimestrales", "Básica", "Clientetres@cliente.com", Utilidades.parse("12/12/2002"), 28003,"Barcelona", 666666663));
+			personaData.add(new Persona("ClienteCuatro","Cuatro", "12345678E", "Vida", "Semestrales", "Amplia", "Clientecuatro@cliente.com", Utilidades.parse("12/12/2003"), 28004,"Barcelona", 666666664));
+			personaData.add(new Persona("ClienteCinco","Cinco", "12345678F", "Salud", "Trimestrales", "Limitada", "Clientecinco@cliente.com", Utilidades.parse("12/12/2004"), 28005,"Madrid", 666666665));
+			personaData.add(new Persona("ClienteSeis","Seis", "12345678G", "Coche", "Anuales", "Básica", "Clienteseis@cliente.com", Utilidades.parse("12/12/2005"), 28006,"Madrid", 666666666));
 		}
 		  tablaPersonas.setItems(personaData);
     	
@@ -146,8 +145,20 @@ public class FormController {
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
     @FXML
     void vaciarForm(ActionEvent event) {
-    	restablecerFrom();
-    }
+		// Si se ha seleccionado una fila, se muestra un pop up de confirmación
+		Alert confirm = new Alert(AlertType.CONFIRMATION);
+    	
+		confirm.setTitle("Confirmación para limpiar formulario");
+		//errorAlert.setHeaderText("Va a eliminar la fila seleccionada");
+		confirm.setContentText("¿Está seguro de que desea vaciar el formulario?");
+		    	    		
+		// Si el usuario acepta, entonces se lleva a cabo la acción correspondiente
+		confirm.showAndWait().ifPresent(response -> {
+			if (response == ButtonType.OK) {
+				restablecerFrom();
+		    }
+    });
+		}
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
     @FXML
     void seleccionar(MouseEvent event) {
@@ -384,7 +395,6 @@ public class FormController {
 	        
 	        GraficoController controller = loader.getController();
 	        controller.setDialogStage(dialogStage);
-	        
 	        // Muestra el diálogo y no continúa el código hasta que lo cierra el usuario
 	        dialogStage.showAndWait();
 
